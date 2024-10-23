@@ -6,7 +6,7 @@ global:
 bootstrap:
   bootstrap_ou_name: "technomers updated"                         # Bootstrap OU name
   bootstrap_account_name: "LZ CICD UPDATED"                      # LZ CICD Account Name
-  bootstrap_account_email: "ashwinkallaje@technomers.com"                            # example: test_at_ollion_com
+  bootstrap_account_email: "devops@technomers.com"                            # example: test_at_ollion_com
   cicd:
     git_repo_id: "praveentehnomers/aws-landing-zone"            # AWS LZ Github Repository ID
     git_repo_name: "aws-landing-zone"                    # AWS LZ Github Repository Name

@@ -54,18 +54,18 @@ org:
     enable_pci_dss_standard: true                        # Whether want to enable pci_dss_standard on security hub for all the accounts
     enable_nist_standard: true                           # Whether want to enable nist_standard on security hub for all the accounts
   permission_sets_principal:
-    cto_operations_group: ""                             # DL for CTO operations group
-    cto_core_networking_operations_group: ""             # DL for CTO core networking operations group
-    cto_security_operations_group: ""                    # DL for CTO security operations group
-    cto_elevated_security_operations_group: ""           # DL for CTO elevated security operations group
-    audit_and_compliance_operations_group: ""            # DL for CTO audit compliance operations group
-    cto_build_group: ""                                  # DL for CTO build group
-    cto_core_networking_build_group: ""                  # DL for CTO core networking build group
-    organization_admin: ""                               # DL for organization admin
-    cto_elevated_security_build_group: ""                # DL for CTO elevated security build group
-    cto_security_build_group: ""                         # DL for CTO security build group
-    cto_build_group2: ""                                 # DL for CTO build group 2
-    cfo: ""                                              # DL for CFO
+    cto_operations_group: "cloudops@throughgen.com"                             # DL for CTO operations group
+    cto_core_networking_operations_group: "cloudops@throughgen.com"             # DL for CTO core networking operations group
+    cto_security_operations_group: "cloudsecops@throughgen.com"                    # DL for CTO security operations group
+    cto_elevated_security_operations_group: "cloudsecops@throughgen.com"           # DL for CTO elevated security operations group
+    audit_and_compliance_operations_group: "cloudauditops@throughgen.com"            # DL for CTO audit compliance operations group
+    cto_build_group: "cloudops@throughgen.com"                                  # DL for CTO build group
+    cto_core_networking_build_group: "cloudops@throughgen.com"                  # DL for CTO core networking build group
+    organization_admin: "cloudowners@throughgen.com"                               # DL for organization admin
+    cto_elevated_security_build_group: "cloudsecops@throughgen.com"                # DL for CTO elevated security build group
+    cto_security_build_group: "cloudsecops@throughgen.com"                         # DL for CTO security build group
+    cto_build_group2: "cloudops@throughgen.com"                                 # DL for CTO build group 2
+    cfo: "cloudbilling@throughgen.com"                                              # DL for CFO
   org_hierarchy:
     common:
       name: "Common"                                     # Common OU name
@@ -164,7 +164,7 @@ org:
 network:
   dnshub:
     resolver:
-      domain_name: "test.com"                            # Please enter the Domain Name
+      domain_name: "throughgen.com"                            # Please enter the Domain Name
       ips:                                               # Please specify the Resolver IP address and port numbers
         - ip: "" 
           port: "53"
@@ -236,9 +236,9 @@ env:
     tgw_attachment_subnets_cidr: []                     # Transit Gateway Subnet CIDRs for Staging VPC  eg:[] will create three subnets
 default_tags:
   common:                                               # Common tags
-    environment: "Test"
-    owner: "TFProviders"
-    project: "Test"
+    environment: "dev"
+    owner: "cloudops"
+    project: "hirepanda"
   account:
     core: {}                                            # Tags for Core Account
     cicd: {}                                            # Tags for CICD account

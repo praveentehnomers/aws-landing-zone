@@ -11,7 +11,7 @@ bootstrap:
     git_repo_id: "praveentehnomers/aws-landing-zone"            # AWS LZ Github Repository ID
     git_repo_name: "aws-landing-zone"                    # AWS LZ Github Repository Name
     git_branch: "technomers"                                   # AWS LZ Github Repository Branch
-    s3_bucket_prefix: "aws-landing-zone"                 # S3 Bucket Prefix for AWS LZ Terraform State Bucket
+    s3_bucket_prefix: "technomers-aws-landing-zone"                 # S3 Bucket Prefix for AWS LZ Terraform State Bucket
 org:
   common:
     target_regions:

@@ -1,7 +1,7 @@
 global:
   home_region: "ap-south-1"                          # Home region for AWS LZ deployment 
   lz_state_bucket: "aws-lz-terraform-technomers-1"                 # Name for AWS LZ Terraform State bucket
-  lz_state_locking_dynamodb_table: "aws-lz-terraform-state-lock"   # Name of DyanmoDB table for terraform state Locking
+  lz_state_locking_dynamodb_table: "aws-lz-terraform-state-lock-updated"   # Name of DyanmoDB table for terraform state Locking
   switch_role_to_assume: "OrganizationAccountAccessRole" # Name of the Role to Assume to Deploy AWS LZ services in Accounts
 bootstrap:
   bootstrap_ou_name: "technomers"                         # Bootstrap OU name

@@ -1,17 +1,17 @@
 global:
   home_region: "ap-south-1"                          # Home region for AWS LZ deployment 
-  lz_state_bucket: "aws-lz-terraform-technomers-updated"                 # Name for AWS LZ Terraform State bucket
-  lz_state_locking_dynamodb_table: "aws-lz-terraform-state-lock-updated"   # Name of DyanmoDB table for terraform state Locking
+  lz_state_bucket: "aws-lz-terraform-throughgen"                 # Name for AWS LZ Terraform State bucket
+  lz_state_locking_dynamodb_table: "aws-lz-terraform-state-lock"   # Name of DyanmoDB table for terraform state Locking
   switch_role_to_assume: "OrganizationAccountAccessRole" # Name of the Role to Assume to Deploy AWS LZ services in Accounts
 bootstrap:
-  bootstrap_ou_name: "technomers updated"                         # Bootstrap OU name
-  bootstrap_account_name: "LZ CICD UPDATED"                      # LZ CICD Account Name
-  bootstrap_account_email: "devops@technomers.com"                            # example: test_at_ollion_com
+  bootstrap_ou_name: "throughgen"                         # Bootstrap OU name
+  bootstrap_account_name: "LZ CICD"                      # LZ CICD Account Name
+  bootstrap_account_email: "cloudadmin@throughgen.com"                            # example: test_at_ollion_com
   cicd:
     git_repo_id: "praveentehnomers/aws-landing-zone"            # AWS LZ Github Repository ID
     git_repo_name: "aws-landing-zone"                    # AWS LZ Github Repository Name
     git_branch: "technomers"                                   # AWS LZ Github Repository Branch
-    s3_bucket_prefix: "technomers-aws-landing-zone"                 # S3 Bucket Prefix for AWS LZ Terraform State Bucket
+    s3_bucket_prefix: "throughgen-aws-landing-zone"                 # S3 Bucket Prefix for AWS LZ Terraform State Bucket
 org:
   common:
     target_regions:
@@ -25,13 +25,13 @@ org:
     standard_ia_days: 30                                 # Retention to move s3 object to Standard IA
     glacier_days: 60                                     # Retention to move s3 object from Standard IA To Glacier
   shared_services:
-    ses_sender_email_address: ""                         # example: test_at_ollion_com
+    ses_sender_email_address: "no-reply@throughgen.com"                         # example: test_at_ollion_com
     ses_recipients_email_addresses:
-      - ""                                               # example: test_at_ollion_com
-      - ""                                               # example: test_at_ollion_com
+      - "ashwinkallaje@throughgen.com"                                               # example: test_at_ollion_com
+      - "praveen.adoni@throughgen.com"                                               # example: test_at_ollion_com
     sns_recipients_email_addresses:
-      - ""                                               # example: test_at_ollion_com
-      - ""                                               # example: test_at_ollion_com
+      - "ashwinkallaje@throughgen.com"                                               # example: test_at_ollion_com
+      - "praveen.adoni@throughgen.com"                                               # example: test_at_ollion_com
   billing:
     report_name: "main-report"                           # Name of the Cost and Usage Report 
     time_unit: "HOURLY"                                  # Frequency on which report data should be measured and displayed.
@@ -73,30 +73,30 @@ org:
       accounts:
         audit_account:
           name: "Audit Logs"                             # Name of the Audit Logs Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps:                                          # List of SCPS to apply for Audit Logs Account
             - "denyS3Modification"
         billing_account:
           name: "Billing"                                # Name of the Billing Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps:                                          # List of SCPS to apply for Billing ACcount
             - "denyS3Modification"
         security_logs_account: 
           name: "Security Logs"                          # Name of the Security Logs Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps:                                          # List of SCPS to apply for Security Logs Account
             - "denyS3Modification"
         security_tools_account:    
           name: "Security Tools"                         # Name of the Security Tools Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps: []                                       # List of SCPS to apply for Security Tools Account
         operational_logs_account:  
           name: "Operational Logs"                       # Name of the Operational Logs Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps: []                                       # List of SCPS to apply for Operationl Logs Account
         infra_ci_cd_account:    
           name: "Infra CI/CD"                            # Name of the INFRACICD Logs Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps: []                                       # List of SCPS to apply for Infra CICD Account
     infrastructure:                        
       name: "Infrastructure"                             # Infrastructure OU name
@@ -104,23 +104,23 @@ org:
       accounts:
         network_hub_account:
           name: "Network Hub"                            # Name of the INFRACICD Logs Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps: []                                       # List of SCPS to apply for Network Hub Account
         dns_hub_account:
           name: "DNS Hub"                                # Name of the DNS HUB Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps: []                                       # List of SCPS to apply for DNS Hub Account
         high_trust_interconnect_account:
           name: "High Trust Interconnect"                # Name of the High Trust Interconnect Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps: []                                       # List of SCPS to apply for High Trust Interconnect Account
         no_trust_interconnect_account:
           name: "No Trust Interconnect"                  # Name of the No Trust Interconnect Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps: []                                       # List of SCPS to apply for No Trust Interconnect Account
         shared_services_account:
           name: "Shared Services"                        # Name of the Shared Services Account
-          email:  "ashwinkallaje@technomers.com"                                     # example: test_at_ollion_com
+          email:  "ashwinkallaje@throughgen.com"                                     # example: test_at_ollion_com
           scps: []                                       # List of SCPS to apply for Shared Services Account
     application:
       name: "Application"                                # Application OU name
@@ -131,11 +131,11 @@ org:
         accounts:
           dev_master_account:
             name: "Dev Master"                           # Name of the Dev Master Account
-            email:  "ashwinkallaje@technomers.com"                                   # example: test_at_ollion_com
+            email:  "ashwinkallaje@throughgen.com"                                   # example: test_at_ollion_com
             scps: []                                     # List of SCPS to apply for Dev Master Account
           bu1_app_dev_account:
             name: "BU1 App Dev"                          # Name of the BU1 App Dev Account
-            email:  "ashwinkallaje@technomers.com"                                   # example: test_at_ollion_com
+            email:  "ashwinkallaje@throughgen.com"                                   # example: test_at_ollion_com
             scps: []                                     # List of SCPS to apply for BU1 App Dev Account
       prod: 
         name: "Prod"                                     # Production OU name
@@ -143,11 +143,11 @@ org:
         accounts:
           prod_master_account:            
             name: "Prod Master"                          # Name of the Prod Master Account
-            email:  "ashwinkallaje@technomers.com"                                   # example: test_at_ollion_com
+            email:  "ashwinkallaje@throughgen.com"                                   # example: test_at_ollion_com
             scps: []                                     # List of SCPS to apply for Prod Master Account
           bu1_app_prod_account:
             name: "BU1 App Prod"                         # Name of the BU1 App Prod Account
-            email:  "ashwinkallaje@technomers.com"                                   # example: test_at_ollion_com
+            email:  "ashwinkallaje@throughgen.com"                                   # example: test_at_ollion_com
             scps: []                                     # List of SCPS to apply for BU1 App Prod Account
       staging:
         name: "Staging"                                  # Staging OU name
@@ -155,11 +155,11 @@ org:
         accounts:
           stg_master_account:
             name: "Staging Master"                       # Name of the Staging Master Account
-            email:  "ashwinkallaje@technomers.com"                                   # example: test_at_ollion_com
+            email:  "ashwinkallaje@throughgen.com"                                   # example: test_at_ollion_com
             scps: []                                     # List of SCPS to apply for Staging Master Account
           bu1_app_stg_account:
             name: "BU1 App Staging"                      # Name of the BU1 App Staging Account
-            email:  "ashwinkallaje@technomers.com"                                   # example: test_at_ollion_com
+            email:  "ashwinkallaje@throughgen.com"                                   # example: test_at_ollion_com
             scps: []                                     # List of SCPS to apply for BU1 App Staging Account
 network:
   dnshub:

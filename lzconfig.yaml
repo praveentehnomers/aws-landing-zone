@@ -1,12 +1,12 @@
 global:
   home_region: "ap-south-1"                          # Home region for AWS LZ deployment 
-  lz_state_bucket: "aws-lz-terraform-throughgen"                 # Name for AWS LZ Terraform State bucket
-  lz_state_locking_dynamodb_table: "aws-lz-terraform-state-lock"   # Name of DyanmoDB table for terraform state Locking
+  lz_state_bucket: "aws-lz-terraform-throughgenin"                 # Name for AWS LZ Terraform State bucket
+  lz_state_locking_dynamodb_table: "aws-lz-state-lock"   # Name of DyanmoDB table for terraform state Locking
   switch_role_to_assume: "OrganizationAccountAccessRole" # Name of the Role to Assume to Deploy AWS LZ services in Accounts
 bootstrap:
-  bootstrap_ou_name: "throughgen"                         # Bootstrap OU name
+  bootstrap_ou_name: "throughgenin"                         # Bootstrap OU name
   bootstrap_account_name: "LZ CICD"                      # LZ CICD Account Name
-  bootstrap_account_email: "cloudadmin@throughgen.com"                            # example: test_at_ollion_com
+  bootstrap_account_email: "cloudopsmanager@throughgen.com"                            # example: test_at_ollion_com
   cicd:
     git_repo_id: "praveentehnomers/aws-landing-zone"            # AWS LZ Github Repository ID
     git_repo_name: "aws-landing-zone"                    # AWS LZ Github Repository Name

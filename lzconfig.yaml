@@ -40,7 +40,7 @@ org:
     multi_region_trail: true                             # Whether to enable CLoudtrail Multi Region
     include_global_service_events: true                  # Whether to include global service events in CloudTrail log
   infra_cicd:
-    infra_cicd_enabled: false                             # Whether to provision INFRA CICD Account
+    infra_cicd_enabled: true                             # Whether to provision INFRA CICD Account
     git_repo_id: "praveentehnomers/aws-landing-zone"            # Infra CICD Github Repository ID 
     git_repo_name: "aws-landing-zone"                    # Infra CICD Github Repository Name
     git_branch: "technomers"                             # Infra CICD Github Repository Branch

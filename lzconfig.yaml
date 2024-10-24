@@ -1,17 +1,17 @@
 global:
   home_region: "ap-south-1"                          # Home region for AWS LZ deployment 
-  lz_state_bucket: "aws-lz-terraform-throughgenin"                 # Name for AWS LZ Terraform State bucket
-  lz_state_locking_dynamodb_table: "aws-lz-state-lock"   # Name of DyanmoDB table for terraform state Locking
+  lz_state_bucket: "lz-terraform-throughgen-innovation"                 # Name for AWS LZ Terraform State bucket
+  lz_state_locking_dynamodb_table: "throughgeninnovation-aws-lz-state-lock"   # Name of DyanmoDB table for terraform state Locking
   switch_role_to_assume: "OrganizationAccountAccessRole" # Name of the Role to Assume to Deploy AWS LZ services in Accounts
 bootstrap:
-  bootstrap_ou_name: "throughgenin"                         # Bootstrap OU name
+  bootstrap_ou_name: "throughgeninnovation"                         # Bootstrap OU name
   bootstrap_account_name: "LZ CICD"                      # LZ CICD Account Name
-  bootstrap_account_email: "cloudopsmanager@throughgen.com"                            # example: test_at_ollion_com
+  bootstrap_account_email: "cloud-devops@throughgen.com"                            # example: test_at_ollion_com
   cicd:
     git_repo_id: "praveentehnomers/aws-landing-zone"            # AWS LZ Github Repository ID
     git_repo_name: "aws-landing-zone"                    # AWS LZ Github Repository Name
     git_branch: "technomers"                                   # AWS LZ Github Repository Branch
-    s3_bucket_prefix: "throughgen-aws-landing-zone"                 # S3 Bucket Prefix for AWS LZ Terraform State Bucket
+    s3_bucket_prefix: "throughgen-innovation-aws-landing-zone"                 # S3 Bucket Prefix for AWS LZ Terraform State Bucket
 org:
   common:
     target_regions:
@@ -40,10 +40,10 @@ org:
     multi_region_trail: true                             # Whether to enable CLoudtrail Multi Region
     include_global_service_events: true                  # Whether to include global service events in CloudTrail log
   infra_cicd:
-    infra_cicd_enabled: true                             # Whether to provision INFRA CICD Account
+    infra_cicd_enabled: false                             # Whether to provision INFRA CICD Account
     git_repo_id: "praveentehnomers/aws-landing-zone"            # Infra CICD Github Repository ID 
     git_repo_name: "aws-landing-zone"                    # Infra CICD Github Repository Name
-    git_branch: "infra-cicd"                             # Infra CICD Github Repository Branch
+    git_branch: "technomers"                             # Infra CICD Github Repository Branch
   guardduty:
     finding_publishing_frequency: "FIFTEEN_MINUTES"      # frequency to publish  GuardDuty finding
   securityhub:
